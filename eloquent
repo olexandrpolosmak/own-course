@@ -1,0 +1,62 @@
+// php artisan make:model Company
+    // php artisan make:model Company -mfs
+
+    //query builder
+    //create
+    $user = User::create([
+        'email' => Str::random(10),
+        'name' => Str::random(10),
+        'password' => Str::random(10),
+    ]);
+
+    $user = new User();
+    $user->name = Str::random(10);
+    $user->email = Str::random(10);
+    $user->password = Str::random(10);
+    $user->save();
+
+    $user = new User();
+    $data = [
+        'email' => Str::random(10),
+        'name' => Str::random(10),
+        'password' => Str::random(10),
+    ];
+    $user->fill($data)->save();
+
+    //update
+
+    $user = User::find(1);
+    $user->name = 'randomName';
+    $user->save();
+
+
+    $user->update([
+        'email' => 'randomEmail',
+    ]);
+
+    // find and get
+// orderBy,orderByDesc, limit offset
+    $user = User::all();
+    $user = User::find(1);
+    $user = User::findOrFail(1);
+    $user = User::where('name', 'randomName')
+        ->get();
+    $user = User::where('name', 'randomName')
+        ->first();
+
+    // join
+
+    $product = Product::query()
+        ->join('categories', 'categories.id', '=', 'products.category_id')
+        ->select('products.*')
+        ->get();
+
+    //delete
+
+    User::where('id', 2)
+        ->delete();
+
+    $user = User::find(1);
+    $user->delete();
+
+    User::destroy(1);

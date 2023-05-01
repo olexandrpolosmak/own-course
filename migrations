@@ -1,0 +1,23 @@
+Table: Products
+- id (primary key)
+- name
+- description
+- price
+- image_url
+- category_id (foreign key referencing Categories table)
+
+Table: Categories
+- id (primary key)
+- name
+
+Table: Customers
+- id (primary key)
+- name
+- email
+- password
+
+Table: Orders¡
+- id (primary key)
+- customer_id (foreign key referencing Customers table)
+- order_date
+- total_price
