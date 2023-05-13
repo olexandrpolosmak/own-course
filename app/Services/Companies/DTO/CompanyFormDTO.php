@@ -8,7 +8,14 @@
 namespace App\Services\Companies\DTO;
 
 
-class CompanyFormDTO
-{
+use Dots\Data\DTO;
 
+class CompanyFormDTO extends DTO
+{
+    protected string $name;
+
+    public function getName(): string
+    {
+        return $this->name;
+    }
 }

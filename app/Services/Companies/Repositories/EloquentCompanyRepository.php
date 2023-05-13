@@ -8,7 +8,29 @@
 namespace App\Services\Companies\Repositories;
 
 
-class EloquentCompanyRepository
-{
+use App\Models\Company;
+use App\Services\Companies\DTO\CompanyFormDTO;
 
+class EloquentCompanyRepository implements CompanyRepository
+{
+    public function find(int $id): ?Company
+    {
+        return Company::find($id);
+    }
+
+    public function create(CompanyFormDTO $dto): Company
+    {
+        return Company::create($dto->toArray());
+    }
+
+    public function update(Company $company, CompanyFormDTO $dto): Company
+    {
+        $company->fill($dto->toArray())->save();
+        return $company;
+    }
+
+    public function delete(int $id): void
+    {
+        Company::destroy($id);
+    }
 }

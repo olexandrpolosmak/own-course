@@ -1,5 +1,17 @@
-crud for all models, except order
-ordering
-permissions
+-crud for all models, except order
+-ordering
+-permissions, i suggest to use only roles, and permission, and also need check how to work with policies, just if they
+restrict access where we gonna do something with model it does not make sense.
+- sms, realize send sms logic
+- events where something happened, may be firebase
+- company catalog, all active dished right now
+- delivery, check if possible
+- promotions
+- schedule command, for expire promotion or something else
+
+
+
+
+
 
 

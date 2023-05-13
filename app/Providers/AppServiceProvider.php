@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Services\Companies\Repositories\CompanyRepository;
+use App\Services\Companies\Repositories\EloquentCompanyRepository;
 use App\Services\Users\Repositories\EloquentUserRepository;
 use App\Services\Users\Repositories\UserRepository;
 use Illuminate\Support\ServiceProvider;
@@ -11,6 +13,7 @@ class AppServiceProvider extends ServiceProvider
 {
     public $bindings = [
         UserRepository::class => EloquentUserRepository::class,
+        CompanyRepository::class => EloquentCompanyRepository::class,
     ];
 
 

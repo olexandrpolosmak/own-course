@@ -8,7 +8,12 @@
 namespace App\Services\Products\Repositories;
 
 
-class ProductRepository
+use App\Models\Product;
+
+interface ProductRepository
 {
+    public function find(int $id): ?Product;
+
+    public function create();
 
 }
