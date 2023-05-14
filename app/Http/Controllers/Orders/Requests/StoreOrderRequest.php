@@ -9,7 +9,7 @@ namespace App\Http\Controllers\Orders\Requests;
 
 
 use App\Models\Order;
-use App\Services\Orders\DTO\FormOrderDTO;
+use App\Services\Orders\DTO\Form\FormOrderDTO;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 

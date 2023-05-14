@@ -1,17 +1,16 @@
 <?php
 /**
- * Description of OrderCart.php
+ * Description of StoreOrderDTO.php
  * @copyright Copyright (c) DOTSPLATFORM, LLC
  * @author    Oleksandr Polosmak <o.polosmak@dotsplatform.com>
  */
 
-namespace App\Services\Orders\Entities;
+namespace App\Services\Orders\DTO;
 
 
-use App\Services\Orders\DTO\OrderCartProducts;
-use Dots\Data\Entity;
+use Dots\Data\DTO;
 
-class OrderCart extends Entity
+class StoreOrderDTO extends DTO
 {
     protected string $userId;
     protected string $companyId;
@@ -19,7 +18,8 @@ class OrderCart extends Entity
     protected int $deliveryType;
     protected ?string $note;
     protected int $timeToReceiving;
-    protected OrderCartProducts $cartItems;
+    protected float $totalPrice;
+    protected array $cartItems;
 
     public function getUserId(): string
     {
@@ -51,18 +51,13 @@ class OrderCart extends Entity
         return $this->timeToReceiving;
     }
 
-    public function getCartItems(): OrderCartProducts
+    public function getTotalPrice(): float
     {
-        return $this->cartItems;
+        return $this->totalPrice;
     }
 
-    public function resolvePrice(): float
+    public function getCartItems(): array
     {
-        $result = 0.0;
-        foreach ($this->getCartItems()->all() as $cartItem) {
-            $result += $cartItem->getPrice();
-        }
-
-        return $result;
+        return $this->cartItems;
     }
 }

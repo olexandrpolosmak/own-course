@@ -10,6 +10,7 @@ namespace App\Services\Products\Repositories;
 
 use App\Models\Product;
 use App\Services\Products\DTO\FormProductDTO;
+use Illuminate\Support\Collection;
 
 interface ProductRepository
 {
@@ -20,4 +21,6 @@ interface ProductRepository
     public function create(FormProductDTO $dto): Product;
 
     public function delete(string $id);
+
+    public function getByIds(array $ids): Collection;
 }

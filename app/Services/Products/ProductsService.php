@@ -11,6 +11,7 @@ namespace App\Services\Products;
 use App\Models\Product;
 use App\Services\Products\DTO\FormProductDTO;
 use App\Services\Products\Repositories\ProductRepository;
+use Illuminate\Support\Collection;
 
 class ProductsService
 {
@@ -32,6 +33,11 @@ class ProductsService
     public function create(FormProductDTO $dto): Product
     {
         return $this->productRepository->create($dto);
+    }
+
+    public function getByIds(array $ids): Collection
+    {
+        return $this->productRepository->getByIds($ids);
     }
 
     public function delete(string $id): void

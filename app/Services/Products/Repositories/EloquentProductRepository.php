@@ -10,6 +10,7 @@ namespace App\Services\Products\Repositories;
 
 use App\Models\Product;
 use App\Services\Products\DTO\FormProductDTO;
+use Illuminate\Support\Collection;
 
 class EloquentProductRepository implements ProductRepository
 {
@@ -43,5 +44,12 @@ class EloquentProductRepository implements ProductRepository
             'image_url' => $dto->getImageUrl(),
             'description' => $dto->getDescription(),
         ];
+    }
+
+    public function getByIds(array $ids): Collection
+    {
+        return Product::query()
+            ->whereIn('id', $ids)
+            ->get();
     }
 }

@@ -6,6 +6,8 @@ use App\Services\Categories\Repositories\CategoryRepository;
 use App\Services\Categories\Repositories\EloquentCategoryRepository;
 use App\Services\Companies\Repositories\CompanyRepository;
 use App\Services\Companies\Repositories\EloquentCompanyRepository;
+use App\Services\Orders\Repositories\EloquentOrderRepository;
+use App\Services\Orders\Repositories\OrderRepository;
 use App\Services\Products\Repositories\EloquentProductRepository;
 use App\Services\Products\Repositories\ProductRepository;
 use App\Services\Users\Repositories\EloquentUserRepository;
@@ -19,7 +21,8 @@ class AppServiceProvider extends ServiceProvider
         UserRepository::class => EloquentUserRepository::class,
         CompanyRepository::class => EloquentCompanyRepository::class,
         ProductRepository::class => EloquentProductRepository::class,
-        CategoryRepository::class => EloquentCategoryRepository::class
+        CategoryRepository::class => EloquentCategoryRepository::class,
+        OrderRepository::class => EloquentOrderRepository::class,
     ];
 
 

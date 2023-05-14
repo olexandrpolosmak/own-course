@@ -2,30 +2,42 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Eloquent;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Carbon;
 
 /**
  * App\Models\Order
  *
  * @property string $id
  * @property string $user_id
- * @property float $total_price
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
- * @method static \Database\Factories\OrderFactory factory($count = null, $state = [])
- * @method static \Illuminate\Database\Eloquent\Builder|Order newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Order newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|Order query()
- * @method static \Illuminate\Database\Eloquent\Builder|Order whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Order whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Order whereTotalPrice($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Order whereUpdatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|Order whereUserId($value)
- * @mixin \Eloquent
+ * @property string $company_id
+ * @property float $totalPrice
+ * @property string|null $note
+ * @property string|null $address
+ * @property int $deliveryType
+ * @property int $timeToReceiving
+ * @property mixed $cartItems
+ * @property Carbon|null $created_at
+ * @property Carbon|null $updated_at
+ * @method static Builder|Order whereAddress($value)
+ * @method static Builder|Order whereCartItems($value)
+ * @method static Builder|Order whereCompanyId($value)
+ * @method static Builder|Order whereDeliveryType($value)
+ * @method static Builder|Order whereNote($value)
+ * @method static Builder|Order whereTimeToReceiving($value)
+ * @mixin Eloquent
  */
 class Order extends BaseModel
 {
     public const DELIVERY_TYPE_TAKEAWAY = 0;
     public const DELIVERY_TYPE_DELIVERY = 10;
+
+    public $timestamps = true;
+
+    protected $guarded = [];
+
+    protected $casts = [
+        'cartItems' => 'array',
+    ];
 }

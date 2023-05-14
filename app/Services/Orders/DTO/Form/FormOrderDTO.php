@@ -5,7 +5,7 @@
  * @author    Oleksandr Polosmak <o.polosmak@dotsplatform.com>
  */
 
-namespace App\Services\Orders\DTO;
+namespace App\Services\Orders\DTO\Form;
 
 
 use Dots\Data\DTO;

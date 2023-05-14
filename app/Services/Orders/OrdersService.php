@@ -8,13 +8,18 @@
 namespace App\Services\Orders;
 
 
-use App\Models\Order;
-use App\Services\Orders\DTO\FormOrderDTO;
+use App\Services\Orders\DTO\Form\FormOrderDTO;
+use App\Services\Orders\Handlers\CreateOrderHandler;
 
 class OrdersService
 {
-    public function create(FormOrderDTO $dto): Order
-    {
+    public function __construct(
+        private readonly CreateOrderHandler $createOrderHandler,
+    ) {
+    }
 
+    public function create(FormOrderDTO $dto): void
+    {
+        $this->createOrderHandler->handle($dto);
     }
 }
