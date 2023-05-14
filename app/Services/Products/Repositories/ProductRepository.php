@@ -9,11 +9,15 @@ namespace App\Services\Products\Repositories;
 
 
 use App\Models\Product;
+use App\Services\Products\DTO\FormProductDTO;
 
 interface ProductRepository
 {
-    public function find(int $id): ?Product;
+    public function find(string $id): ?Product;
 
-    public function create();
+    public function update(Product $product, FormProductDTO $dto): Product;
 
+    public function create(FormProductDTO $dto): Product;
+
+    public function delete(string $id);
 }

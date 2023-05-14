@@ -24,7 +24,7 @@ class EloquentUserRepositoryTest extends TestCase
 
     public function testFindExpectsNull(): void
     {
-        $user = $this->getEloquentUserRepository()->find(123123);
+        $user = $this->getEloquentUserRepository()->find($this->generateUuid());
         $this->assertNull($user);
     }
 

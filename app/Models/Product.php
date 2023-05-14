@@ -8,12 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * App\Models\Product
  *
- * @property int $id
+ * @property string $id
  * @property string $name
  * @property string|null $description
  * @property float $price
  * @property string $image_url
- * @property int $category_id
+ * @property string $category_id
  * @method static \Database\Factories\ProductFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Product newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Product newQuery()
@@ -26,7 +26,6 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Product wherePrice($value)
  * @mixin \Eloquent
  */
-class Product extends Model
+class Product extends BaseModel
 {
-    use HasFactory;
 }

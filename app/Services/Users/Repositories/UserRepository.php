@@ -14,11 +14,11 @@ use App\Services\Users\DTO\UpdateUserDTO;
 
 interface UserRepository
 {
-    public function find(int $id): ?User;
+    public function find(string $id): ?User;
 
     public function create(StoreUserDTO $dto): User;
 
     public function update(User $user, UpdateUserDTO $dto): User;
 
-    public function delete(int $id): void;
+    public function delete(string $id): void;
 }

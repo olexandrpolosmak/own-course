@@ -12,7 +12,7 @@ use Illuminate\Http\JsonResponse;
 
 class ShowUserController extends BaseUserController
 {
-    public function __invoke(int $id): JsonResponse
+    public function __invoke(string $id): JsonResponse
     {
         $user = $this->getUsersService()->find($id);
 

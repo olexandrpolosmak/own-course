@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class DeleteUserController extends BaseUserController
 {
-    public function __invoke(int $id): JsonResponse
+    public function __invoke(string $id): JsonResponse
     {
         $this->getUsersService()->delete($id);
 

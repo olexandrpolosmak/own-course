@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * App\Models\Order
  *
- * @property int $id
- * @property int $user_id
+ * @property string $id
+ * @property string $user_id
  * @property float $total_price
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
@@ -24,7 +24,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Order whereUserId($value)
  * @mixin \Eloquent
  */
-class Order extends Model
+class Order extends BaseModel
 {
-    use HasFactory;
+    public const DELIVERY_TYPE_TAKEAWAY = 0;
+    public const DELIVERY_TYPE_DELIVERY = 10;
 }

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * App\Models\Category
  *
- * @property int $id
+ * @property string $id
  * @property string $name
  * @method static \Database\Factories\CategoryFactory factory($count = null, $state = [])
  * @method static \Illuminate\Database\Eloquent\Builder|Category newModelQuery()
@@ -18,7 +18,6 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Category whereName($value)
  * @mixin \Eloquent
  */
-class Category extends Model
+class Category extends BaseModel
 {
-    use HasFactory;
 }

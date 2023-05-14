@@ -19,14 +19,14 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/users/{user}', ShowUserController::class)
     ->name('users.show')
-    ->whereNumber('user');
+    ->whereUuid('user');
 Route::delete('/users/{user}', DeleteUserController::class)
     ->name('users.delete')
-    ->whereNumber('user');
+    ->whereUuid('user');
 Route::put('/users/{user}', UpdateUserController::class)
     ->name('users.update')
-    ->whereNumber('user');
+    ->whereUuid('user');
 Route::post('/users', StoreUserController::class)
     ->name('users.store')
-    ->whereNumber('user');
+    ->whereUuid('user');
 

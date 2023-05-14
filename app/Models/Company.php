@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * App\Models\Company
  *
- * @property int $id
+ * @property string $id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @method static \Database\Factories\CompanyFactory factory($count = null, $state = [])
@@ -20,7 +20,6 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Company whereUpdatedAt($value)
  * @mixin \Eloquent
  */
-class Company extends Model
+class Company extends BaseModel
 {
-    use HasFactory;
 }

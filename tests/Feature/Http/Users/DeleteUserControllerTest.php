@@ -27,15 +27,7 @@ class DeleteUserControllerTest extends TestCase
     public function testExpectsOkIfDoesNotExist(): void
     {
         $this->delete(route('users.delete', [
-            'user' => 13123,
+            'user' => $this->generateUuid(),
         ]))->assertNoContent();
     }
-
-    public function testExpectsNotFoundIfIdIsNotInt(): void
-    {
-        $this->delete(route('users.delete', [
-            'user' => 'sdfsdf',
-        ]))->assertNotFound();
-    }
-
 }

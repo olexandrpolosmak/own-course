@@ -22,7 +22,7 @@ class UsersService
     ) {
     }
 
-    public function find(int $id): ?User
+    public function find(string $id): ?User
     {
         return $this->userRepository->find($id);
     }
@@ -37,7 +37,7 @@ class UsersService
         return $this->userRepository->update($user, $dto);
     }
 
-    public function delete(int $id): void
+    public function delete(string $id): void
     {
         $this->userRepository->delete($id);
     }

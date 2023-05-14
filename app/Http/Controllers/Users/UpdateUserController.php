@@ -13,7 +13,7 @@ use Illuminate\Http\JsonResponse;
 
 class UpdateUserController extends BaseUserController
 {
-    public function __invoke(UpdateUserRequest $request, int $id): JsonResponse
+    public function __invoke(UpdateUserRequest $request, string $id): JsonResponse
     {
         $user = $this->getUsersService()->find($id);
         $user = $this->getUsersService()->update($user, $request->getDTO());
