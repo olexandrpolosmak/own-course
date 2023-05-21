@@ -17,6 +17,7 @@ use Illuminate\Support\Carbon;
  * @property string $id
  * @property string $name
  * @property string $phone
+ * @property string $photo
  * @property string $password
  * @property Carbon|null $created_at
  * @property Carbon|null $updated_at
@@ -32,7 +33,7 @@ use Illuminate\Support\Carbon;
  * @method static Builder|User whereUpdatedAt($value)
  * @mixin Eloquent
  */
-class User extends Model
+class User extends BaseModel
 {
     protected $guarded = [];
 }

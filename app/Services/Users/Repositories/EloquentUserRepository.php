@@ -20,13 +20,14 @@ class EloquentUserRepository implements UserRepository
         return User::find($id);
     }
 
+    public function findOrFail(string $id): User
+    {
+        return User::findOrFail($id);
+    }
+
     public function create(StoreUserDTO $dto): User
     {
-        return User::query()->create(
-            array_merge([
-                'id' => Str::uuid()
-            ], $dto->toArray()),
-        );
+        return User::query()->create($dto->toArray());
     }
 
     public function update(User $user, UpdateUserDTO $dto): User

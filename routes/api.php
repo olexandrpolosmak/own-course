@@ -4,6 +4,7 @@ use App\Http\Controllers\Users\DeleteUserController;
 use App\Http\Controllers\Users\ShowUserController;
 use App\Http\Controllers\Users\StoreUserController;
 use App\Http\Controllers\Users\UpdateUserController;
+use App\Http\Controllers\Users\UploadUserProfilePhotoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,5 +29,8 @@ Route::put('/users/{user}', UpdateUserController::class)
     ->whereUuid('user');
 Route::post('/users', StoreUserController::class)
     ->name('users.store')
+    ->whereUuid('user');
+Route::post('users/{user}/photo', UploadUserProfilePhotoController::class)
+    ->name('users.photo.store')
     ->whereUuid('user');
 

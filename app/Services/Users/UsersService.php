@@ -27,6 +27,11 @@ class UsersService
         return $this->userRepository->find($id);
     }
 
+    public function findOrFail(string $id): User
+    {
+        return $this->userRepository->findOrFail($id);
+    }
+
     public function create(StoreUserDTO $dto): User
     {
         return $this->createUserHandler->handle($dto);

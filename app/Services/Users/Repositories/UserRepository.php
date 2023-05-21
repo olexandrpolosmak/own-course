@@ -16,6 +16,8 @@ interface UserRepository
 {
     public function find(string $id): ?User;
 
+    public function findOrFail(string $id): User;
+
     public function create(StoreUserDTO $dto): User;
 
     public function update(User $user, UpdateUserDTO $dto): User;

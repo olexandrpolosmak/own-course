@@ -18,6 +18,7 @@ class StoreUserRequest extends FormRequest
         return [
             'name' => 'string',
             'phone' => 'string',
+            'photo' => 'nullable|string',
             'password' => 'string',
         ];
     }
@@ -27,6 +28,7 @@ class StoreUserRequest extends FormRequest
         return StoreUserDTO::fromArray([
             'name' => $this->validated('name'),
             'phone' => $this->validated('phone'),
+            'photo' =>  $this->validated('photo'),
             'password' => $this->validated('password'),
         ]);
     }

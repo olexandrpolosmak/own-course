@@ -16,6 +16,8 @@ class ShowUserController extends BaseUserController
     {
         $user = $this->getUsersService()->find($id);
 
-        return response()->json($user);
+        return response()->json(array_merge($user->toArray(),[
+            'photo' => asset('storage/'. $user->photo)
+        ]));
     }
 }
